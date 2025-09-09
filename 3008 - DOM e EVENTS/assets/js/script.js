@@ -36,15 +36,16 @@ document.getElementById('decrementar').addEventListener('click', () => {
 });
 
 nomeInput.addEventListener('input', () => {
-  const nome = nomeInput.value;
-  caractersElement.textContent = `${nome.length} caracteres`;
+  const nomeSemEspacos = nomeInput.value.replace(/\s/g, '');
+  caractersElement.textContent = `${nomeSemEspacos.length} caracteres`;
 });
 
 nomeInput.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
     const nome = nomeInput.value;
-    if (nome) {
-      const itemTexto = `${nome} (${nome.length} caracteres)`;
+    const nomeSemEspacos = nome.replace(/\s/g, '');
+    if (nomeSemEspacos) {
+      const itemTexto = `${nome} (${nomeSemEspacos.length} caracteres)`;
       const li = document.createElement('li');
       li.textContent = itemTexto;
       resultCaracters.appendChild(li);
