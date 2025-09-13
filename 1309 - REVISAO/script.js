@@ -1,0 +1,1 @@
+const verificarIdade = idade => idade >= 18;
