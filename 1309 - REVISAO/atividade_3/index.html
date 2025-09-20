@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 3 - Sistema de Carrinho de Compras</title>
+  <link rel="stylesheet" href="../../global.style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Sistema de Carrinho de Compras</h1>
+      <div class="carrinho-info">
+        <span class="badge">Itens: <span id="totalItens">0</span></span>
+        <span class="badge total">Total: R$ <span id="totalValor">0,00</span></span>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="produtos-section">
+        <h2>Produtos Disponíveis</h2>
+
+        <div class="produto-form">
+          <h3>Adicionar Novo Produto</h3>
+          <div class="form-grid">
+            <input type="text" id="nomeProduto" placeholder="Nome do produto" required>
+            <input type="number" id="precoProduto" placeholder="Preço (R$)" step="0.01" min="0.01" required>
+            <input type="text" id="categoriaProduto" placeholder="Categoria" required>
+            <button id="btnAdicionarProduto" class="btn btn-primary">Adicionar Produto</button>
+          </div>
+        </div>
+
+        <div class="filtros">
+          <input type="text" id="buscarProduto" placeholder="Buscar produtos...">
+          <select id="filtroCategoria">
+            <option value="">Todas as categorias</option>
+          </select>
+          <select id="ordenarPor">
+            <option value="nome">Ordenar por Nome</option>
+            <option value="preco-menor">Preço: Menor → Maior</option>
+            <option value="preco-maior">Preço: Maior → Menor</option>
+            <option value="categoria">Categoria</option>
+          </select>
+        </div>
+
+        <div id="listaProdutos" class="produtos-grid"></div>
+      </section>
+
+      <section class="carrinho-section">
+        <h2>Meu Carrinho</h2>
+
+        <div class="carrinho-actions">
+          <button id="btnLimparCarrinho" class="btn btn-danger">Limpar Carrinho</button>
+          <button id="btnFinalizarCompra" class="btn btn-success">Finalizar Compra</button>
+        </div>
+
+        <div id="carrinhoVazio" class="carrinho-vazio">
+          <p>Seu carrinho está vazio</p>
+          <p>Adicione produtos da lista acima!</p>
+        </div>
+
+        <div id="listaCarrinho" class="carrinho-lista"></div>
+
+        <div class="carrinho-resumo">
+          <div class="resumo-linha">
+            <span>Subtotal:</span>
+            <span>R$ <span id="subtotal">0,00</span></span>
+          </div>
+          <div class="resumo-linha">
+            <span>Frete:</span>
+            <span>R$ <span id="frete">0,00</span></span>
+          </div>
+          <div class="resumo-linha total-final">
+            <span>Total Final:</span>
+            <span>R$ <span id="totalFinal">0,00</span></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="modalCompra" class="modal hidden">
+      <div class="modal-content">
+        <h2>🎉 Compra Finalizada!</h2>
+        <div id="resumoCompra"></div>
+        <div class="modal-actions">
+          <button id="btnFecharModal" class="btn btn-primary">Fechar</button>
+          <button id="btnNovaCompra" class="btn btn-secondary">Nova Compra</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

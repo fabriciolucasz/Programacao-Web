@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 1 - Criação Dinâmica de Elementos</title>
+  <link rel="stylesheet" href="../../global.style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Criação dinâmica de elementos HTML</h1>
+
+    <div class="form-section">
+      <h2>Selecione um tipo:</h2>
+      <select id="elementType">
+        <option value="paragrafo" selected>Parágrafo</option>
+        <option value="lista">Lista</option>
+        <option value="link">Link</option>
+        <option value="tabela">Tabela</option>
+      </select>
+
+      <div id="inputSection">
+        <div id="paragrafoInputs" class="input-group">
+          <input type="text" id="paragrafoTexto" placeholder="Digite o texto do parágrafo">
+        </div>
+
+        <div id="listaInputs" class="input-group">
+          <input type="text" id="listaItens" placeholder="Digite os itens separados por vírgula">
+          <select id="tipoLista">
+            <option value="ul">Lista não ordenada</option>
+            <option value="ol">Lista ordenada</option>
+          </select>
+        </div>
+
+        <div id="linkInputs" class="input-group">
+          <input type="text" id="linkTexto" placeholder="Texto do link">
+          <input type="url" id="linkUrl" placeholder="URL do link">
+        </div>
+
+        <div id="tabelaInputs" class="input-group">
+          <input type="number" id="tabelaLinhas" placeholder="Número de linhas" min="1" max="10" value="3">
+          <input type="number" id="tabelaColunas" placeholder="Número de colunas" min="1" max="10" value="3">
+        </div>
+      </div>
+
+      <button id="criarElemento">Criar Elemento</button>
+      <button id="limparTudo">Limpar Tudo</button>
+    </div>
+
+    <div class="result-section">
+      <h2>Elementos Criados:</h2>
+      <div id="resultado"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

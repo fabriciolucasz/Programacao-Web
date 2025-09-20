@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 2 - Eventos e Interatividade</title>
+  <link rel="stylesheet" href="../../global.style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Eventos e Interatividade</h1>
+
+    <section class="section">
+      <h2>1. Eventos de Clique</h2>
+      <div class="content">
+        <button id="btnMudarCor" class="btn">Mudar Cor de Fundo</button>
+        <button id="btnContador" class="btn">Contador: <span id="contador">0</span></button>
+        <button id="btnToggleTexto" class="btn">Mostrar/Ocultar Texto</button>
+        <p id="textoToggle" class="hidden">Este texto pode ser mostrado ou ocultado!</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>2. Eventos de Teclado</h2>
+      <div class="content">
+        <div class="input-group">
+          <label for="inputTexto">Digite algo (pressione Enter para confirmar):</label>
+          <input type="text" id="inputTexto" placeholder="Digite aqui...">
+          <p>Caracteres digitados: <span id="contadorCaracteres">0</span></p>
+          <p>Última tecla pressionada: <span id="ultimaTecla">-</span></p>
+        </div>
+
+        <div class="input-group">
+          <label for="inputNumero">Digite apenas números:</label>
+          <input type="text" id="inputNumero" placeholder="Apenas números...">
+          <p id="avisoNumero" class="aviso hidden">Apenas números são permitidos!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. Formulário Interativo</h2>
+      <div class="content">
+        <form id="formulario" class="form">
+          <div class="input-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+            <span class="erro" id="erroNome"></span>
+          </div>
+
+          <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <span class="erro" id="erroEmail"></span>
+          </div>
+
+          <div class="input-group">
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" min="1" max="120" required>
+            <span class="erro" id="erroIdade"></span>
+          </div>
+
+          <div class="input-group">
+            <label for="cidade">Cidade:</label>
+            <select id="cidade" required>
+              <option value="">Selecione uma cidade</option>
+              <option value="sao-paulo">São Paulo</option>
+              <option value="rio-janeiro">Rio de Janeiro</option>
+              <option value="belo-horizonte">Belo Horizonte</option>
+              <option value="brasilia">Brasília</option>
+              <option value="salvador">Salvador</option>
+            </select>
+            <span class="erro" id="erroCidade"></span>
+          </div>
+
+          <button type="submit" class="btn btn-submit">Enviar Dados</button>
+          <button type="button" id="btnLimpar" class="btn btn-secondary">Limpar Formulário</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. Resultados das Interações</h2>
+      <div class="content">
+        <div id="resultados" class="resultados">
+          <p>Interaja com os elementos acima para ver os resultados aqui!</p>
+        </div>
+        <button id="btnLimparResultados" class="btn btn-danger">Limpar Resultados</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. Eventos de Mouse</h2>
+      <div class="content">
+        <div id="areaInterativa" class="area-interativa">
+          <p>Passe o mouse aqui, clique e arraste!</p>
+          <p>Posição do mouse: <span id="posicaoMouse">x: 0, y: 0</span></p>
+          <p>Status: <span id="statusMouse">Aguardando...</span></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
